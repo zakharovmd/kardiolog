@@ -1,6 +1,6 @@
 import { GraduationCap } from 'lucide-react';
-import { educationItems, labels } from '../data/profile.js';
-import { Section } from './Section.jsx';
+import { educationItems, labels } from '../data/profile';
+import { Section } from './Section';
 
 export function EducationSection() {
   return (

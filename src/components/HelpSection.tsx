@@ -1,6 +1,6 @@
 import { HeartPulse } from 'lucide-react';
-import { helpItems, labels } from '../data/profile.js';
-import { Section } from './Section.jsx';
+import { helpItems, labels } from '../data/profile';
+import { Section } from './Section';
 
 export function HelpSection() {
   return (

@@ -1,6 +1,6 @@
 import { ChevronRight, MapPin } from 'lucide-react';
-import { labels, locations } from '../data/profile.js';
-import { Section } from './Section.jsx';
+import { labels, locations } from '../data/profile';
+import { Section } from './Section';
 
 export function AddressSection() {
   return (

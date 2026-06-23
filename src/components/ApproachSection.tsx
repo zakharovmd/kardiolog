@@ -1,8 +1,8 @@
-import { Award, Sparkles } from 'lucide-react';
-import { featureItems, labels } from '../data/profile.js';
-import { Section } from './Section.jsx';
+import { Award, HeartHandshake, Microscope, ShieldCheck, Sparkles } from 'lucide-react';
+import { featureItems, labels } from '../data/profile';
+import { Section } from './Section';
 
-const featureIcons = [Sparkles, Award];
+const featureIcons = [Microscope, Sparkles, HeartHandshake, ShieldCheck, Award];
 
 export function ApproachSection() {
   return (
@@ -10,7 +10,7 @@ export function ApproachSection() {
       <p className="lead">{labels.approachText}</p>
       <div className="feature-list">
         {featureItems.map((item, index) => {
-          const Icon = featureIcons[index];
+          const Icon = featureIcons[index] ?? Sparkles;
 
           return (
             <div key={item}>

@@ -1,6 +1,6 @@
-import { Clock3, MessageCircle, ShieldCheck, Star } from 'lucide-react';
-import { doctor, labels } from '../data/profile.js';
-import { InfoCard } from './InfoCard.jsx';
+import { Clock3, ShieldCheck } from 'lucide-react';
+import { doctor, labels } from '../data/profile';
+import { InfoCard } from './InfoCard';
 
 export function Hero() {
   return (
@@ -14,10 +14,6 @@ export function Hero() {
         <div className="portrait-frame">
           <img src={doctor.photo} alt={doctor.photoAlt} />
         </div>
-        <div className="hero__badge">
-          <Star size={15} fill="currentColor" />
-          {doctor.rating}
-        </div>
       </div>
 
       <div className="hero__content">
@@ -28,7 +24,6 @@ export function Hero() {
 
       <div className="stats">
         <InfoCard icon={Clock3} label={labels.experience} value={doctor.experience} />
-        <InfoCard icon={MessageCircle} label={labels.reviews} value={doctor.reviews} />
         <InfoCard icon={ShieldCheck} label={labels.appointment} value={doctor.price} />
       </div>
     </section>
