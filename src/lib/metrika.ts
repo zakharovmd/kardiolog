@@ -5,6 +5,7 @@ export const YM_COUNTER_ID = 111097971;
 
 export type MetrikaGoal =
   | 'book_online'
+  | 'online_consult_open'
   | 'call_clinic_open'
   | 'call_clinic_dial'
   | 'telegram'

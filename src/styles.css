@@ -258,6 +258,10 @@ h1 {
   gap: 10px;
 }
 
+.modal .social-actions {
+  margin-top: 18px;
+}
+
 .content-grid {
   position: relative;
   z-index: 1;
@@ -430,7 +434,7 @@ h2 {
   background: rgba(31, 38, 53, 0.5);
 }
 
-.call-modal {
+.modal {
   position: relative;
   width: min(100%, 440px);
   padding: 24px;
@@ -440,19 +444,26 @@ h2 {
   box-shadow: 0 24px 80px rgba(31, 38, 53, 0.28);
 }
 
-.call-modal h2 {
+.modal h2 {
   max-width: 340px;
   margin-bottom: 12px;
   font-size: 24px;
 }
 
-.call-modal p {
+.modal p {
   margin: 18px 0 8px;
   color: #5d6470;
   font-weight: 800;
 }
 
-.call-modal ul {
+.modal .modal__price {
+  margin: 0 0 4px;
+  color: #1d4b84;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.modal ul {
   display: grid;
   gap: 6px;
   margin: 0 0 20px;
@@ -460,7 +471,7 @@ h2 {
   color: #5d6470;
 }
 
-.call-modal__close {
+.modal__close {
   position: absolute;
   top: 14px;
   right: 14px;
@@ -477,7 +488,7 @@ h2 {
   line-height: 1;
 }
 
-.call-modal__phone {
+.modal__phone {
   display: inline-flex;
   margin-top: 2px;
   color: #1d4b84;
@@ -485,7 +496,7 @@ h2 {
   font-weight: 900;
 }
 
-.call-modal__button {
+.modal__button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -534,9 +545,8 @@ h2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .social-actions {
+  .links-panel > :last-child {
     grid-column: span 2;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -562,9 +572,8 @@ h2 {
     border-width: 0 0 0 1px;
   }
 
-  .social-actions {
+  .links-panel > :last-child {
     grid-column: auto;
-    grid-template-columns: 1fr;
   }
 
   .content-grid {
