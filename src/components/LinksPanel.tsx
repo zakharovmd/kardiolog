@@ -2,6 +2,7 @@ import { CalendarCheck, MapPin, MessageCircle, Phone, Send, Stethoscope } from '
 import { type MouseEvent, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { callCenter, doctor, labels } from '../data/profile';
+import { reachGoal } from '../lib/metrika';
 import { ActionButton } from './ActionButton';
 
 export function LinksPanel() {
@@ -26,23 +27,23 @@ export function LinksPanel() {
   return (
     <>
       <aside className="links-panel" aria-label={labels.quickActions}>
-        <ActionButton href={doctor.bookingUrl} icon={CalendarCheck}>
+        <ActionButton href={doctor.bookingUrl} icon={CalendarCheck} goal="book_online">
           {labels.bookOnline}
         </ActionButton>
-        <ActionButton icon={Phone} variant="light" onClick={() => setIsCallModalOpen(true)}>
+        <ActionButton icon={Phone} variant="light" goal="call_clinic_open" onClick={() => setIsCallModalOpen(true)}>
           {labels.callClinic}
         </ActionButton>
-        <ActionButton href={doctor.primaryClinicMapUrl} icon={MapPin} variant="light">
+        <ActionButton href={doctor.primaryClinicMapUrl} icon={MapPin} variant="light" goal="addresses">
           {labels.addresses}
         </ActionButton>
-        <ActionButton href={doctor.sourceUrl} icon={Stethoscope} variant="outline">
+        <ActionButton href={doctor.sourceUrl} icon={Stethoscope} variant="outline" goal="clinic_profile">
           {labels.clinicProfile}
         </ActionButton>
         <div className="social-actions" aria-label={labels.social}>
-          <ActionButton href={doctor.telegramUrl} icon={Send} variant="telegram">
+          <ActionButton href={doctor.telegramUrl} icon={Send} variant="telegram" goal="telegram">
             {labels.telegram}
           </ActionButton>
-          <ActionButton href={doctor.whatsappUrl} icon={MessageCircle} variant="whatsapp">
+          <ActionButton href={doctor.whatsappUrl} icon={MessageCircle} variant="whatsapp" goal="whatsapp">
             {labels.whatsapp}
           </ActionButton>
         </div>
@@ -61,7 +62,7 @@ export function LinksPanel() {
               ×
             </button>
             <h2 id="call-modal-title">{callCenter.title}</h2>
-            <a className="call-modal__phone" href={phoneHref}>
+            <a className="call-modal__phone" href={phoneHref} onClick={() => reachGoal('call_clinic_dial')}>
               {callCenter.phone}
             </a>
             <p>{callCenter.scheduleTitle}</p>
@@ -70,7 +71,7 @@ export function LinksPanel() {
                 <li key={item}>{item}</li>
               ))}
             </ul>
-            <a className="call-modal__button" href={phoneHref}>
+            <a className="call-modal__button" href={phoneHref} onClick={() => reachGoal('call_clinic_dial')}>
               {labels.callClinic}
             </a>
           </div>

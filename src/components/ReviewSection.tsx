@@ -1,5 +1,6 @@
 import { ExternalLink, Star } from 'lucide-react';
 import { doctor, labels } from '../data/profile';
+import { reachGoal } from '../lib/metrika';
 import { Section } from './Section';
 
 export function ReviewSection() {
@@ -12,7 +13,13 @@ export function ReviewSection() {
           ))}
         </div>
         <p>{labels.reviewText}</p>
-        <a className="review__button" href={doctor.reviewsUrl} target="_blank" rel="noreferrer">
+        <a
+          className="review__button"
+          href={doctor.reviewsUrl}
+          target="_blank"
+          rel="noreferrer"
+          onClick={() => reachGoal('reviews')}
+        >
           <span>{labels.reviewLink}</span>
           <ExternalLink size={18} />
         </a>
