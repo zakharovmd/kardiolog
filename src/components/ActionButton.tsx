@@ -6,7 +6,7 @@ type ActionButtonProps = {
   href?: string;
   icon: LucideIcon;
   children: ReactNode;
-  variant?: 'primary' | 'light' | 'outline' | 'telegram' | 'whatsapp';
+  variant?: 'primary' | 'light' | 'outline' | 'telegram' | 'whatsapp' | 'max';
   onClick?: MouseEventHandler<HTMLButtonElement>;
   goal?: MetrikaGoal;
 };

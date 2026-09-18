@@ -1,4 +1,4 @@
-import { CalendarCheck, MapPin, MessageCircle, Phone, Send, Stethoscope, Video } from 'lucide-react';
+import { CalendarCheck, MapPin, MessageCircle, MessageSquareText, Phone, Send, Stethoscope, Video } from 'lucide-react';
 import { type MouseEvent, type ReactNode, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { callCenter, doctor, labels, onlineConsult } from '../data/profile';
@@ -78,6 +78,9 @@ export function LinksPanel() {
             </ActionButton>
             <ActionButton href={doctor.whatsappUrl} icon={MessageCircle} variant="whatsapp" goal="whatsapp">
               {labels.whatsapp}
+            </ActionButton>
+            <ActionButton href={doctor.maxUrl} icon={MessageSquareText} variant="max" goal="max">
+              {labels.max}
             </ActionButton>
           </div>
         </>,

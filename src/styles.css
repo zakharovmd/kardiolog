@@ -247,6 +247,12 @@ h1 {
   color: #1f7a45;
 }
 
+.action--max {
+  border: 1px solid rgba(91, 87, 209, 0.24);
+  background: rgba(91, 87, 209, 0.1);
+  color: #5b57d1;
+}
+
 .action__arrow {
   justify-self: end;
   opacity: 0.7;

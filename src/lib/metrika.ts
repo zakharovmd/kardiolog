@@ -10,6 +10,7 @@ export type MetrikaGoal =
   | 'call_clinic_dial'
   | 'telegram'
   | 'whatsapp'
+  | 'max'
   | 'addresses'
   | 'clinic_profile'
   | 'reviews';
